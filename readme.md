@@ -1,6 +1,6 @@
 # gomain
 
-a small utility to create a main.go and main_test. files
+a small utility to create a main.go and main_test. files in the current folder (I know I'm lazy 🙈)
 
 ## features
 
