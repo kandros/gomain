@@ -4,7 +4,7 @@ a small utility to create a main.go and main_test. files in the current folder (
 
 ## features
 
-- it files already axists it stops to prevent overrides
+- if files already axists it stops to prevent overrides
 - opens _main.go_ in your editor configured by the env variable `$EDITOR`
 
 ## usage
