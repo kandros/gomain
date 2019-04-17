@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"io/ioutil"
 	"os"
-	"os/exec"
+
+	"github.com/kandros/goutil/editorutil"
 )
 
 func createMainFile() {
@@ -47,16 +48,8 @@ func safeWriteFile(filename, fileContent string) {
 
 }
 
-func openFileInEditor(filename string) {
-	editor := os.Getenv("EDITOR")
-
-	var cmd *exec.Cmd
-	cmd = exec.Command(editor, filename)
-	cmd.Start()
-}
-
 func main() {
 	createMainFile()
 	createMainTestFile()
-	openFileInEditor("./main.go")
+	editorutil.OpenFileInEditor("./main.go")
 }
