@@ -13,4 +13,4 @@ run `gomain`
 
 ## install
 
-`go get github.com/kandros/gomain`
+`go get -u github.com/kandros/gomain`
