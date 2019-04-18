@@ -1,11 +1,8 @@
 package main
 
 import (
-	"fmt"
-	"io/ioutil"
-	"os"
-
 	"github.com/kandros/goutil/editorutil"
+	"github.com/kandros/goutil/fileutil"
 )
 
 func createMainFile() {
@@ -15,7 +12,7 @@ import "fmt"
 func main() {
 	fmt.Println("hello")
 }`
-	safeWriteFile("main.go", fileContent)
+	fileutil.SafeWriteFileOrExit("main.go", []byte(fileContent))
 }
 
 func createMainTestFile() {
@@ -32,20 +29,7 @@ func TestMain(t *testing.T) {
 	}
 }
 	`
-	safeWriteFile("main_test.go", fileContent)
-}
-
-func safeWriteFile(filename, fileContent string) {
-	if _, err := os.Stat(filename); os.IsNotExist(err) {
-		err := ioutil.WriteFile(filename, []byte(fileContent), 0777)
-		if err != nil {
-			panic(err)
-		}
-	} else {
-		fmt.Printf("file %s already exists\n", filename)
-		os.Exit(0)
-	}
-
+	fileutil.SafeWriteFileOrExit("main_test.go", []byte(fileContent))
 }
 
 func main() {
