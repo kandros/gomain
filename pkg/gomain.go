@@ -32,10 +32,8 @@ func TestMain(t *testing.T) {
 	fileutil.SafeWriteFile("main_test.go", []byte(fileContent))
 }
 
-func Run(openInEditor bool) {
+func Run() {
 	createMainFile()
 	createMainTestFile()
-	if openInEditor {
-		editorutil.OpenFileInEditor("./main.go")
-	}
+	editorutil.OpenFileInEditor("./main.go")
 }
