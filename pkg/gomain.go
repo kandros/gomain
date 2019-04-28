@@ -5,7 +5,7 @@ import (
 	"github.com/kandros/goutil/fileutil"
 )
 
-func createMainFile() {
+func CreateMainFile() {
 	fileContent := `package main
 import "fmt"
 
@@ -15,7 +15,7 @@ func main() {
 	fileutil.SafeWriteFile("main.go", []byte(fileContent))
 }
 
-func createMainTestFile() {
+func CreateMainTestFile() {
 	fileContent := `package main
 
 import "testing"
@@ -33,7 +33,7 @@ func TestMain(t *testing.T) {
 }
 
 func Run() {
-	createMainFile()
-	createMainTestFile()
+	CreateMainFile()
+	CreateMainTestFile()
 	editorutil.OpenFileInEditor("./main.go")
 }
