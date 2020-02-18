@@ -12,7 +12,7 @@ import "fmt"
 func main() {
 	fmt.Println("hello")
 }`
-	fileutil.SafeWriteFileOrExit("main.go", []byte(fileContent))
+	fileutil.SafeWriteFile("main.go", []byte(fileContent))
 }
 
 func CreateMainTestFile() {
